@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>XLR8</title>
+    <!-- Linking to the local movie.png file as the favicon -->
+    <link rel="icon" href="movie.png" type="image/png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Outfit:wght@300;400;600;700&display=swap"
       rel="stylesheet"
@@ -19,7 +21,7 @@
       }
       
       html {
-        font-size: 90%; /* This scales down the entire site to 90% */
+        font-size: 90%;
       }
       
       * {
@@ -46,14 +48,14 @@
       }
       
       .container {
-        max-width: 1260px; /* Reduced from 1400px to 90% */
+        max-width: 1260px;
         width: 100%;
         margin: 0 auto;
       }
       
       .grid-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted from 220px */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1.25rem;
         padding: 1.5rem;
       }
@@ -123,7 +125,7 @@
         font-family: 'Space Grotesk', sans-serif;
         text-align: center;
         margin-bottom: 2rem;
-        font-size: clamp(2.25rem, 4.5vw, 3.6rem); /* Adjusted from 2.5rem, 5vw, 4rem */
+        font-size: clamp(2.25rem, 4.5vw, 3.6rem);
         font-weight: 700;
         letter-spacing: -0.025em;
         background: linear-gradient(

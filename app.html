@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XLR8</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Outfit:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-color: #030712;
+        --card-color: #1f2937;
+        --text-color: #f9fafb;
+        --accent-color: #6366f1;
+        --secondary-accent: #8b5cf6;
+        --hover-color: #4f46e5;
+      }
+      
+      html {
+        font-size: 90%; /* This scales down the entire site to 90% */
+      }
+      
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        font-family: 'Outfit', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+        background: linear-gradient(
+          to bottom right,
+          #000000,
+          #030712,
+          #1a1b26
+        );
+      }
+      
+      .container {
+        max-width: 1260px; /* Reduced from 1400px to 90% */
+        width: 100%;
+        margin: 0 auto;
+      }
+      
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted from 220px */
+        gap: 1.25rem;
+        padding: 1.5rem;
+      }
+      
+      .grid-item {
+        background-color: var(--card-color);
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .grid-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          var(--accent-color),
+          var(--secondary-accent)
+        );
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      
+      .grid-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2),
+                    0 10px 10px -5px rgba(0, 0, 0, 0.1);
+        background-color: var(--hover-color);
+      }
+      
+      .grid-item:hover::before {
+        opacity: 0.2;
+      }
+      
+      a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+      }
+      
+      .grid-item:hover a {
+        color: #ffffff;
+        transform: scale(1.05);
+      }
+      
+      h1 {
+        font-family: 'Space Grotesk', sans-serif;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: clamp(2.25rem, 4.5vw, 3.6rem); /* Adjusted from 2.5rem, 5vw, 4rem */
+        font-weight: 700;
+        letter-spacing: -0.025em;
+        background: linear-gradient(
+          45deg,
+          var(--accent-color),
+          var(--secondary-accent)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .grid-item {
+        animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        opacity: 0;
+      }
+      
+      @media (max-width: 768px) {
+        .grid-container {
+          grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+          gap: 1rem;
+          padding: 1rem;
+        }
+        .grid-item {
+          padding: 1.25rem;
+        }
+        h1 {
+          margin-bottom: 1.5rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        body {
+          padding: 1rem;
+        }
+        .grid-container {
+          grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+          gap: 0.75rem;
+        }
+        .grid-item {
+          padding: 1rem;
+        }
+        a {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Stream free movies, anytime, anywhere</h1>
+      <div class="grid-container">
+        <div class="grid-item"><a href="https://www1.watchserieshd.org/home/">WatchSeriesHD</a></div>
+        <div class="grid-item"><a href="https://goku.sx/home">Goku.sx</a></div>
+        <div class="grid-item"><a href="https://multimovies.sbs/">MultiMovies</a></div>
+        <div class="grid-item"><a href="https://netmirror.app/">NetMirror</a></div>
+        <div class="grid-item"><a href="https://ww25.soap2day.day/soap2day/">Soap2Day</a></div>
+        <div class="grid-item"><a href="https://movies7to.net/home/">Movies7</a></div>
+        <div class="grid-item"><a href="https://cinemaluxe.click/">CinemaLuxe</a></div>
+        <div class="grid-item"><a href="https://katmoviehd.fi/">KatMovieHD</a></div>
+        <div class="grid-item"><a href="https://zorotv.com.in/">ZoroTV</a></div>
+        <div class="grid-item"><a href="https://www.miruro.tv/">MiruroTV</a></div>
+      </div>
+    </div>
+  </body>
+</html>

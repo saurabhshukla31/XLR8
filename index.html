@@ -16,20 +16,18 @@
         --accent-color: #6366f1;
         --secondary-accent: #8b5cf6;
         --hover-color: #4f46e5;
-        --button-bg: linear-gradient(45deg, #6366f1, #8b5cf6);
-        --button-hover-bg: linear-gradient(45deg, #4f46e5, #6b46e5);
       }
-
+      
       html {
-        font-size: 90%;
+        font-size: 90%; /* This scales down the entire site to 90% */
       }
-
+      
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
-
+      
       body {
         font-family: 'Outfit', sans-serif;
         background-color: var(--bg-color);
@@ -39,22 +37,27 @@
         flex-direction: column;
         justify-content: center;
         padding: 2rem;
-        background: linear-gradient(to bottom right, #000000, #030712, #1a1b26);
+        background: linear-gradient(
+          to bottom right,
+          #000000,
+          #030712,
+          #1a1b26
+        );
       }
-
+      
       .container {
-        max-width: 1260px;
+        max-width: 1260px; /* Reduced from 1400px to 90% */
         width: 100%;
         margin: 0 auto;
       }
-
+      
       .grid-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted from 220px */
         gap: 1.25rem;
         padding: 1.5rem;
       }
-
+      
       .grid-item {
         background-color: var(--card-color);
         border-radius: 0.75rem;
@@ -72,7 +75,7 @@
         backdrop-filter: blur(8px);
         border: 1px solid rgba(255, 255, 255, 0.1);
       }
-
+      
       .grid-item::before {
         content: "";
         position: absolute;
@@ -80,22 +83,26 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, var(--accent-color), var(--secondary-accent));
+        background: linear-gradient(
+          135deg,
+          var(--accent-color),
+          var(--secondary-accent)
+        );
         opacity: 0;
         transition: opacity 0.4s ease;
       }
-
+      
       .grid-item:hover {
         transform: translateY(-5px);
         box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2),
                     0 10px 10px -5px rgba(0, 0, 0, 0.1);
         background-color: var(--hover-color);
       }
-
+      
       .grid-item:hover::before {
         opacity: 0.2;
       }
-
+      
       a {
         color: var(--text-color);
         text-decoration: none;
@@ -106,46 +113,30 @@
         transition: all 0.3s ease;
         letter-spacing: 0.5px;
       }
-
+      
       .grid-item:hover a {
         color: #ffffff;
         transform: scale(1.05);
       }
-
+      
       h1 {
         font-family: 'Space Grotesk', sans-serif;
         text-align: center;
         margin-bottom: 2rem;
-        font-size: clamp(2.25rem, 4.5vw, 3.6rem);
+        font-size: clamp(2.25rem, 4.5vw, 3.6rem); /* Adjusted from 2.5rem, 5vw, 4rem */
         font-weight: 700;
         letter-spacing: -0.025em;
-        background: linear-gradient(45deg, var(--accent-color), var(--secondary-accent));
+        background: linear-gradient(
+          45deg,
+          var(--accent-color),
+          var(--secondary-accent)
+        );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         text-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
       }
-
-      /* Button Styles */
-      .lucky-button {
-        display: block;
-        margin: 0 auto 2rem;
-        padding: 1rem 2rem;
-        font-size: 1.25rem;
-        color: #ffffff;
-        background: var(--button-bg);
-        border: none;
-        border-radius: 1rem;
-        cursor: pointer;
-        font-family: 'Space Grotesk', sans-serif;
-        transition: background 0.3s ease;
-        box-shadow: 0 4px 10px rgba(99, 102, 241, 0.5);
-      }
-
-      .lucky-button:hover {
-        background: var(--button-hover-bg);
-      }
-
+      
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -156,12 +147,12 @@
           transform: translateY(0);
         }
       }
-
+      
       .grid-item {
         animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         opacity: 0;
       }
-
+      
       @media (max-width: 768px) {
         .grid-container {
           grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -175,7 +166,7 @@
           margin-bottom: 1.5rem;
         }
       }
-
+      
       @media (max-width: 480px) {
         body {
           padding: 1rem;
@@ -196,10 +187,9 @@
   <body>
     <div class="container">
       <h1>Stream free movies, anytime, anywhere</h1>
-      <button class="lucky-button" onclick="feelingLucky()">I'm Feeling Lucky</button>
       <div class="grid-container">
         <div class="grid-item"><a href="https://www1.watchserieshd.org/home/">WatchSeriesHD</a></div>
-        <div class="grid-item"><a href="https://goku.sx/home">GokuSX</a></div>
+        <div class="grid-item"><a href="https://goku.sx/home">Goku.sx</a></div>
         <div class="grid-item"><a href="https://multimovies.sbs/">MultiMovies</a></div>
         <div class="grid-item"><a href="https://netmirror.app/">NetMirror</a></div>
         <div class="grid-item"><a href="https://ww25.soap2day.day/soap2day/">Soap2Day</a></div>
@@ -210,13 +200,5 @@
         <div class="grid-item"><a href="https://www.miruro.tv/">MiruroTV</a></div>
       </div>
     </div>
-
-    <script>
-      function feelingLucky() {
-        const links = document.querySelectorAll('.grid-item a');
-        const randomIndex = Math.floor(Math.random() * links.length);
-        window.location.href = links[randomIndex].href;
-      }
-    </script>
   </body>
 </html>
